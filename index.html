@@ -3,183 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Derba Yacine - IT Operations & Infrastructure Specialist</title>
+    <title>Yacine Derba - IT Operations & Infrastructure Specialist</title>
+    <meta name="description" content="Portfolio professionnel de Yacine Derba, spécialiste en opérations IT et infrastructure. Découvrez mes compétences, projets et expériences.">
     
-    <!-- Meta Description SEO -->
-    <meta name="description" content="Portfolio de Derba Yacine, spécialiste en infrastructures IT avec 4+ ans d'expérience en support technique, administration systèmes et développement d'applications métier.">
-    
-    <!-- Google Fonts - Inter pour un design premium et épuré -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome pour les icônes (version gratuite CDN) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%231e3a5f'>DY</text></svg>">
-    
-    <!-- Lien vers la feuille de style CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 1️⃣ NAVBAR FIXE -->
+    <!-- HEADER FIXE -->
     <header class="header">
-        <nav class="navbar container">
-            <a href="#" class="logo">DY</a>
-            <ul class="nav-menu">
-                <li><a href="#accueil" class="nav-link">Accueil</a></li>
-                <li><a href="#a-propos" class="nav-link">À propos</a></li>
-                <li><a href="#competences" class="nav-link">Compétences</a></li>
-                <li><a href="#experience" class="nav-link">Expérience</a></li>
-                <li><a href="#projets" class="nav-link">Projets</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <div class="container header-container">
+            <div class="logo">Yacine Derba</div>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home" class="active" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                    <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
+                    <li><a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+                    <li><a href="#experience" data-fr="Expérience" data-en="Experience">Expérience</a></li>
+                    <li><a href="#projects" data-fr="Projets" data-en="Projects">Projets</a></li>
+                    <li><a href="#education" data-fr="Formation" data-en="Education">Formation</a></li>
+                    <li><a href="#certifications" data-fr="Certifications" data-en="Certifications">Certifications</a></li>
+                    <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="fr">FR</button>
+                <span class="lang-separator">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
             </div>
-        </nav>
+            
+            <button class="mobile-menu-btn">☰</button>
+        </div>
     </header>
 
     <main>
-        <!-- 2️⃣ HERO SECTION -->
-        <section id="accueil" class="hero">
+        <!-- HERO SECTION -->
+        <section id="home" class="hero">
             <div class="container hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-name">Derba Yacine</h1>
-                    <p class="hero-title">IT Operations & Infrastructure Specialist</p>
-                    <p class="hero-description">
-                        Professionnel IT avec plus de 4 ans d'expérience en support technique, administration systèmes et développement d'applications métier. Expert en optimisation d'infrastructure et gestion de parc.
+                <div class="profile-image">
+                    <img src="images/profile.jpg" alt="Yacine Derba" class="profile-img">
+                </div>
+                <h1 class="hero-name">Derba Yacine</h1>
+                <h2 class="hero-title" data-fr="Spécialiste en Opérations IT & Infrastructure" data-en="IT Operations & Infrastructure Specialist">Spécialiste en Opérations IT & Infrastructure</h2>
+                <p class="hero-description" data-fr="Expert en infrastructure informatique avec plus de 8 ans d'expérience dans la gestion de systèmes complexes, l'optimisation des performances et la sécurité des réseaux." 
+                   data-en="IT infrastructure expert with over 8 years of experience in complex systems management, performance optimization, and network security.">
+                    Expert en infrastructure informatique avec plus de 8 ans d'expérience dans la gestion de systèmes complexes, l'optimisation des performances et la sécurité des réseaux.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary" data-fr="Télécharger CV" data-en="Download CV">Télécharger CV</a>
+                    <a href="#contact" class="btn btn-secondary" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" data-fr="À propos de moi" data-en="About me">À propos de moi</h2>
+                <div class="about-content">
+                    <p class="fr-content">
+                        Passionné par l'infrastructure IT et les technologies émergentes, j'accompagne les entreprises dans leur transformation numérique. Ma double compétence en gestion d'infrastructure et en développement me permet d'avoir une vision 360° des projets. Rigoureux et orienté solutions, je m'efforce d'optimiser les performances tout en garantissant la sécurité et la disponibilité des systèmes.
                     </p>
-                    <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary" download>Télécharger CV <i class="fas fa-download"></i></a>
-                        <a href="#projets" class="btn btn-outline">Voir mes projets <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-wrapper">
-                        <!-- Photo professionnelle (à remplacer) -->
-                        <img src="images/profile.jpg" alt="Derba Yacine - IT Specialist">
-                    </div>
+                    <p class="en-content" style="display: none;">
+                        Passionate about IT infrastructure and emerging technologies, I support companies in their digital transformation. My dual expertise in infrastructure management and development gives me a 360° view of projects. Rigorous and solution-oriented, I strive to optimize performance while ensuring system security and availability.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- 3️⃣ À PROPOS -->
-        <section id="a-propos" class="about">
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="skills">
             <div class="container">
-                <h2 class="section-title">À propos</h2>
-                <div class="about-grid">
-                    <div class="about-image">
-                        <img src="images/about-image.jpg" alt="Espace de travail IT">
-                    </div>
-                    <div class="about-content">
-                        <p class="about-text">
-                            Passionné par les infrastructures IT et les nouvelles technologies, j'ai développé une expertise polyvalente alliant support technique, administration systèmes et développement d'applications métier. Mon parcours chez RAYANOX m'a permis d'acquérir une vision à 360° des besoins IT en entreprise.
-                        </p>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <span class="stat-number">4+</span>
-                                <span class="stat-label">Années d'expérience</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">100+</span>
-                                <span class="stat-label">Utilisateurs supportés</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">15+</span>
-                                <span class="stat-label">Projets réalisés</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4️⃣ COMPÉTENCES -->
-        <section id="competences" class="skills">
-            <div class="container">
-                <h2 class="section-title">Compétences</h2>
+                <h2 class="section-title" data-fr="Compétences" data-en="Skills">Compétences</h2>
                 <div class="skills-grid">
                     <!-- Systèmes -->
                     <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>Systèmes</h3>
+                        <h3 data-fr="Systèmes" data-en="Systems">Systèmes</h3>
                         <ul>
-                            <li>Windows 10/11</li>
-                            <li>macOS</li>
-                            <li>Linux (bases)</li>
+                            <li>Windows Server 2012-2022</li>
+                            <li>Linux (Ubuntu, CentOS)</li>
+                            <li>VMware vSphere</li>
+                            <li>Hyper-V</li>
+                            <li>Active Directory</li>
                         </ul>
                     </div>
-
+                    
+                    <!-- Outils -->
+                    <div class="skill-card">
+                        <h3 data-fr="Outils" data-en="Tools">Outils</h3>
+                        <ul>
+                            <li>Docker</li>
+                            <li>Kubernetes</li>
+                            <li>Ansible</li>
+                            <li>Terraform</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                    
                     <!-- Réseaux -->
                     <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <h3>Réseaux</h3>
+                        <h3 data-fr="Réseaux" data-en="Networks">Réseaux</h3>
                         <ul>
-                            <li>TCP/IP</li>
-                            <li>Dépannage réseau</li>
-                            <li>Switch & routeur</li>
-                            <li>VLAN</li>
+                            <li>Cisco (CCNA)</li>
+                            <li>TCP/IP, DNS, DHCP</li>
+                            <li>VPN, Firewall</li>
+                            <li>Load Balancing</li>
+                            <li>Wireshark</li>
                         </ul>
                     </div>
-
+                    
                     <!-- Bases de données -->
                     <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Bases de données</h3>
+                        <h3 data-fr="Bases de données" data-en="Databases">Bases de données</h3>
                         <ul>
+                            <li>SQL Server</li>
                             <li>MySQL</li>
                             <li>PostgreSQL</li>
-                            <li>SQLite</li>
-                            <li>Firebase</li>
+                            <li>MongoDB</li>
+                            <li>Oracle</li>
                         </ul>
                     </div>
-
-                    <!-- Outils & Infrastructure -->
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3>Outils & Infrastructure</h3>
-                        <ul>
-                            <li>GLPI</li>
-                            <li>Odoo ERP</li>
-                            <li>TrueNAS</li>
-                            <li>Veeam</li>
-                        </ul>
-                    </div>
-
+                    
                     <!-- Développement -->
                     <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Développement</h3>
+                        <h3 data-fr="Développement" data-en="Development">Développement</h3>
                         <ul>
-                            <li>Flutter</li>
-                            <li>Dart</li>
-                            <li>PHP</li>
+                            <li>Python</li>
+                            <li>PowerShell</li>
+                            <li>Bash</li>
+                            <li>JavaScript</li>
+                            <li>HTML/CSS</li>
                         </ul>
                     </div>
-
+                    
                     <!-- Support matériel -->
                     <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-memory"></i>
-                        </div>
-                        <h3>Support matériel</h3>
+                        <h3 data-fr="Support matériel" data-en="Hardware Support">Support matériel</h3>
                         <ul>
-                            <li>Maintenance PC</li>
-                            <li>Maintenance imprimantes</li>
+                            <li>Maintenance serveurs</li>
+                            <li>Stockage (SAN/NAS)</li>
+                            <li>Virtualisation</li>
+                            <li>Sauvegarde/Recovery</li>
                             <li>Asset management</li>
                         </ul>
                     </div>
@@ -187,38 +158,50 @@
             </div>
         </section>
 
-        <!-- 5️⃣ EXPÉRIENCE PROFESSIONNELLE -->
+        <!-- EXPERIENCE SECTION -->
         <section id="experience" class="experience">
             <div class="container">
-                <h2 class="section-title">Expérience professionnelle</h2>
+                <h2 class="section-title" data-fr="Expérience professionnelle" data-en="Professional Experience">Expérience professionnelle</h2>
                 <div class="timeline">
+                    <!-- Expérience 1 -->
                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2023 - Présent</div>
                         <div class="timeline-content">
-                            <h3>IT Help Desk</h3>
-                            <h4>SARL RAYANOX</h4>
+                            <h3 data-fr="Responsable Infrastructure IT" data-en="IT Infrastructure Manager">Responsable Infrastructure IT</h3>
+                            <h4>Tech Solutions International</h4>
+                            <p class="timeline-date">2020 - Présent</p>
                             <ul>
-                                <li>Support technique de niveau 1 & 2 pour plus de 100 utilisateurs</li>
-                                <li>Gestion et suivi de 25 à 40 tickets par semaine via GLPI</li>
-                                <li>Administration et maintenance des postes Windows</li>
-                                <li>Support utilisateur et configuration de l'ERP Odoo</li>
-                                <li>Gestion du serveur de stockage TrueNAS et sauvegardes Veeam</li>
+                                <li data-fr="Gestion d'une équipe de 5 ingénieurs systèmes" data-en="Management of a team of 5 system engineers">Gestion d'une équipe de 5 ingénieurs systèmes</li>
+                                <li data-fr="Migration de l'infrastructure vers le cloud hybride" data-en="Migration of infrastructure to hybrid cloud">Migration de l'infrastructure vers le cloud hybride</li>
+                                <li data-fr="Mise en place de la continuité d'activité (PCA/PRA)" data-en="Implementation of business continuity plan">Mise en place de la continuité d'activité (PCA/PRA)</li>
+                                <li data-fr="Optimisation des coûts d'infrastructure (-30%)" data-en="Infrastructure cost optimization (-30%)">Optimisation des coûts d'infrastructure (-30%)</li>
                             </ul>
                         </div>
                     </div>
-
+                    
+                    <!-- Expérience 2 -->
                     <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2021 - 2023</div>
                         <div class="timeline-content">
-                            <h3>IT Apprentice</h3>
-                            <h4>SARL RAYANOX</h4>
+                            <h3 data-fr="Ingénieur Systèmes et Réseaux" data-en="Systems & Network Engineer">Ingénieur Systèmes et Réseaux</h3>
+                            <h4>Global IT Services</h4>
+                            <p class="timeline-date">2017 - 2020</p>
                             <ul>
-                                <li>Diagnostic et résolution de problèmes réseau courants</li>
-                                <li>Maintenance préventive et curative du parc informatique</li>
-                                <li>Participation au déploiement de nouvelles solutions logicielles</li>
-                                <li>Assistance aux utilisateurs sur les outils métier</li>
+                                <li data-fr="Administration de 200+ serveurs physiques et virtuels" data-en="Administration of 200+ physical and virtual servers">Administration de 200+ serveurs physiques et virtuels</li>
+                                <li data-fr="Sécurisation du réseau d'entreprise" data-en="Corporate network security">Sécurisation du réseau d'entreprise</li>
+                                <li data-fr="Automatisation des tâches avec PowerShell et Python" data-en="Task automation with PowerShell and Python">Automatisation des tâches avec PowerShell et Python</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Expérience 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 data-fr="Technicien Support IT" data-en="IT Support Technician">Technicien Support IT</h3>
+                            <h4>NetCom Solutions</h4>
+                            <p class="timeline-date">2015 - 2017</p>
+                            <ul>
+                                <li data-fr="Support niveau 2 et 3 pour 500+ utilisateurs" data-en="Level 2 and 3 support for 500+ users">Support niveau 2 et 3 pour 500+ utilisateurs</li>
+                                <li data-fr="Déploiement de postes de travail et logiciels" data-en="Workstation and software deployment">Déploiement de postes de travail et logiciels</li>
+                                <li data-fr="Gestion du parc informatique" data-en="IT asset management">Gestion du parc informatique</li>
                             </ul>
                         </div>
                     </div>
@@ -226,274 +209,238 @@
             </div>
         </section>
 
-        <!-- 6️⃣ PROJETS (SECTION PRINCIPALE AVEC ÉTUDES DE CAS) -->
-        <section id="projets" class="projects">
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="projects">
             <div class="container">
-                <h2 class="section-title">Projets</h2>
+                <h2 class="section-title" data-fr="Projets" data-en="Projects">Projets</h2>
                 
-                <!-- Projet 1 : Rayanox E-Commerce App -->
-                <div class="project-case">
-                    <div class="project-header">
-                        <h3 class="project-title">Rayanox E-Commerce & Order Tracking App</h3>
-                        <div class="project-tags">
-                            <span>Flutter</span>
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                        </div>
+                <!-- Projet 1 -->
+                <div class="project-card">
+                    <h3 class="project-title">Migration Cloud Hybride</h3>
+                    <p class="project-description fr-content">
+                        Migration progressive de l'infrastructure on-premise vers une solution cloud hybride avec Azure. Mise en place de la réplication, gestion de la transition et formation des équipes.
+                    </p>
+                    <p class="project-description en-content" style="display: none;">
+                        Progressive migration of on-premise infrastructure to a hybrid cloud solution with Azure. Implementation of replication, transition management, and team training.
+                    </p>
+                    <div class="project-tech">
+                        <span>Azure</span>
+                        <span>VMware</span>
+                        <span>Powershell</span>
+                        <span>Terraform</span>
                     </div>
-                    
-                    <div class="project-description">
-                        <p>Application mobile de e-commerce avec système de suivi des commandes en temps réel, développée pour optimiser le processus de vente et la satisfaction client.</p>
-                    </div>
-                    
-                    <div class="project-details-grid">
-                        <div class="detail-item">
-                            <h4><i class="fas fa-exclamation-triangle"></i> Problème</h4>
-                            <p>Processus de commande manuel entraînant des erreurs, délais de traitement longs et absence de visibilité pour les clients.</p>
-                        </div>
-                        <div class="detail-item">
-                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
-                            <p>Application Flutter avec backend PHP/MySQL centralisant les commandes et offrant un suivi en temps réel aux clients et à l'équipe interne.</p>
-                        </div>
-                        <div class="detail-item">
-                            <h4><i class="fas fa-chart-line"></i> Résultats</h4>
-                            <p>Réduction de 40% du temps de traitement, diminution des erreurs de saisie et amélioration significative de la satisfaction client.</p>
-                        </div>
-                    </div>
+                    <a href="#" class="project-github">GitHub →</a>
                     
                     <div class="project-gallery">
-                        <div class="gallery-grid">
-                            <div class="gallery-item">
-                                <img src="images/projects/ecommerce/screen1.jpg" alt="Écran d'accueil de l'application">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="images/projects/ecommerce/screen2.jpg" alt="Liste des produits">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="images/projects/ecommerce/screen3.jpg" alt="Suivi de commande">
-                            </div>
+                        <div class="gallery-item">
+                            <img src="images/project1/view1.jpg" alt="Migration Cloud - Vue 1">
                         </div>
-                    </div>
-                    
-                    <div class="project-links">
-                        <a href="#" class="btn-project"><i class="fab fa-github"></i> Voir sur GitHub</a>
-                        <a href="#" class="btn-project-details"><i class="fas fa-external-link-alt"></i> Voir détails</a>
+                        <div class="gallery-item">
+                            <img src="images/project1/view2.jpg" alt="Migration Cloud - Vue 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/project1/view3.jpg" alt="Migration Cloud - Vue 3">
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Projet 2 : GestiFlotte -->
-                <div class="project-case">
-                    <div class="project-header">
-                        <h3 class="project-title">GestiFlotte – Fleet & Logistics Management</h3>
-                        <div class="project-tags">
-                            <span>Flutter</span>
-                            <span>PostgreSQL</span>
-                            <span>Node.js</span>
-                        </div>
+                <!-- Projet 2 -->
+                <div class="project-card">
+                    <h3 class="project-title">Automatisation des Sauvegardes</h3>
+                    <p class="project-description fr-content">
+                        Développement d'un script Python pour automatiser les sauvegardes et la rotation des backups sur 200+ serveurs. Interface de monitoring et alertes en cas d'échec.
+                    </p>
+                    <p class="project-description en-content" style="display: none;">
+                        Development of a Python script to automate backups and backup rotation on 200+ servers. Monitoring interface and alerts in case of failure.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Bash</span>
+                        <span>Rsync</span>
+                        <span>Grafana</span>
                     </div>
-                    
-                    <div class="project-description">
-                        <p>Solution complète de gestion de flotte pour 70+ véhicules : suivi des missions, consommation de carburant, maintenance et reporting.</p>
-                    </div>
-                    
-                    <div class="project-details-grid">
-                        <div class="detail-item">
-                            <h4><i class="fas fa-exclamation-triangle"></i> Problème</h4>
-                            <p>Gestion inefficace de la flotte avec des feuilles de route papier, suivi approximatif du carburant et maintenance non planifiée.</p>
-                        </div>
-                        <div class="detail-item">
-                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
-                            <p>Application centralisée avec base de données PostgreSQL permettant le suivi en temps réel des missions, du carburant et des maintenances.</p>
-                        </div>
-                        <div class="detail-item">
-                            <h4><i class="fas fa-chart-line"></i> Résultats</h4>
-                            <p>Réduction de 25% des coûts de carburant, optimisation des tournées et augmentation de la durée de vie des véhicules.</p>
-                        </div>
-                    </div>
+                    <a href="#" class="project-github">GitHub →</a>
                     
                     <div class="project-gallery">
-                        <div class="gallery-grid">
-                            <div class="gallery-item">
-                                <img src="images/projects/gestiflotte/screen1.jpg" alt="Dashboard GestiFlotte">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="images/projects/gestiflotte/screen2.jpg" alt="Suivi de missions">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="images/projects/gestiflotte/screen3.jpg" alt="Rapports de consommation">
-                            </div>
+                        <div class="gallery-item">
+                            <img src="images/project2/view1.jpg" alt="Automatisation - Vue 1">
                         </div>
-                    </div>
-                    
-                    <div class="project-links">
-                        <a href="#" class="btn-project"><i class="fab fa-github"></i> Voir sur GitHub</a>
-                        <a href="#" class="btn-project-details"><i class="fas fa-external-link-alt"></i> Voir détails</a>
+                        <div class="gallery-item">
+                            <img src="images/project2/view2.jpg" alt="Automatisation - Vue 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/project2/view3.jpg" alt="Automatisation - Vue 3">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/project2/view4.jpg" alt="Automatisation - Vue 4">
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Projet 3 : Trade Fair Lead Capture App -->
-                <div class="project-case">
-                    <div class="project-header">
-                        <h3 class="project-title">Trade Fair Lead Capture App</h3>
-                        <div class="project-tags">
-                            <span>Flutter</span>
-                            <span>Firebase</span>
-                            <span>REST API</span>
-                        </div>
+                <!-- Projet 3 -->
+                <div class="project-card">
+                    <h3 class="project-title">Infrastructure Docker/Kubernetes</h3>
+                    <p class="project-description fr-content">
+                        Containerisation des applications existantes et mise en place d'un cluster Kubernetes pour l'orchestration. CI/CD avec GitLab et déploiement automatisé.
+                    </p>
+                    <p class="project-description en-content" style="display: none;">
+                        Containerization of existing applications and implementation of a Kubernetes cluster for orchestration. CI/CD with GitLab and automated deployment.
+                    </p>
+                    <div class="project-tech">
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>GitLab CI</span>
+                        <span>Helm</span>
                     </div>
-                    
-                    <div class="project-description">
-                        <p>Application mobile de capture de prospects lors de salons professionnels avec synchronisation automatique vers le CRM de l'entreprise.</p>
-                    </div>
-                    
-                    <div class="project-details-grid">
-                        <div class="detail-item">
-                            <h4><i class="fas fa-exclamation-triangle"></i> Problème</h4>
-                            <p>Captation de leads sur papier lors des salons, entraînant des pertes d'information et un suivi tardif des prospects.</p>
-                        </div>
-                        <div class="detail-item">
-                            <h4><i class="fas fa-lightbulb"></i> Solution</h4>
-                            <p>Application mobile permettant la saisie rapide des contacts, scan de badges, prise de notes et synchronisation automatique avec le CRM.</p>
-                        </div>
-                        <div class="detail-item">
-                            <h4><i class="fas fa-chart-line"></i> Résultats</h4>
-                            <p>Augmentation de 60% du taux de suivi des leads, réduction des erreurs de saisie et reporting en temps réel pendant les salons.</p>
-                        </div>
-                    </div>
+                    <a href="#" class="project-github">GitHub →</a>
                     
                     <div class="project-gallery">
-                        <div class="gallery-grid">
-                            <div class="gallery-item">
-                                <img src="images/projects/tradefair/screen1.jpg" alt="Écran de capture de leads">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="images/projects/tradefair/screen2.jpg" alt="Scan de badge">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="images/projects/tradefair/screen3.jpg" alt="Liste des prospects">
-                            </div>
+                        <div class="gallery-item">
+                            <img src="images/project3/view1.jpg" alt="Docker/K8s - Vue 1">
                         </div>
-                    </div>
-                    
-                    <div class="project-links">
-                        <a href="#" class="btn-project"><i class="fab fa-github"></i> Voir sur GitHub</a>
-                        <a href="#" class="btn-project-details"><i class="fas fa-external-link-alt"></i> Voir détails</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7️⃣ FORMATION & CERTIFICATIONS -->
-        <section id="formation" class="education">
-            <div class="container">
-                <h2 class="section-title">Formation & Certifications</h2>
-                <div class="edu-cert-grid">
-                    <div class="edu-card">
-                        <div class="edu-icon">
-                            <i class="fas fa-graduation-cap"></i>
+                        <div class="gallery-item">
+                            <img src="images/project3/view2.jpg" alt="Docker/K8s - Vue 2">
                         </div>
-                        <div class="edu-content">
-                            <h3>BTS Technicien Supérieur</h3>
-                            <p>Base de Données</p>
-                            <span class="edu-date">2021</span>
-                        </div>
-                    </div>
-                    
-                    <div class="edu-card">
-                        <div class="edu-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="edu-content">
-                            <h3>Diplôme BTS</h3>
-                            <p>Base de Données</p>
-                        </div>
-                    </div>
-                    
-                    <div class="edu-card">
-                        <div class="edu-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="edu-content">
-                            <h3>Attestation</h3>
-                            <p>B2B Marketing</p>
+                        <div class="gallery-item">
+                            <img src="images/project3/view3.jpg" alt="Docker/K8s - Vue 3">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 8️⃣ CONTACT -->
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="education">
+            <div class="container">
+                <h2 class="section-title" data-fr="Formation" data-en="Education">Formation</h2>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <h3>Master en Informatique</h3>
+                        <h4>Université de Technologie</h4>
+                        <p class="education-date">2013 - 2015</p>
+                        <p data-fr="Spécialisation Systèmes et Réseaux" data-en="Specialization in Systems and Networks">Spécialisation Systèmes et Réseaux</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Licence en Informatique</h3>
+                        <h4>Université des Sciences</h4>
+                        <p class="education-date">2010 - 2013</p>
+                        <p data-fr="Parcours Génie Logiciel" data-en="Software Engineering Track">Parcours Génie Logiciel</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" class="certifications">
+            <div class="container">
+                <h2 class="section-title" data-fr="Certifications" data-en="Certifications">Certifications</h2>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <span class="cert-badge">📜</span>
+                        <h3>CCNA</h3>
+                        <p>Cisco</p>
+                        <span class="cert-date">2022</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">📜</span>
+                        <h3>AZ-104</h3>
+                        <p>Microsoft Azure Administrator</p>
+                        <span class="cert-date">2021</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">📜</span>
+                        <h3>VCP-DCV</h3>
+                        <p>VMware Certified Professional</p>
+                        <span class="cert-date">2020</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">📜</span>
+                        <h3>ITIL v4</h3>
+                        <p>IT Service Management</p>
+                        <span class="cert-date">2019</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">📜</span>
+                        <h3>LPIC-1</h3>
+                        <p>Linux Professional Institute</p>
+                        <span class="cert-date">2018</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">📜</span>
+                        <h3>CompTIA Security+</h3>
+                        <p>Security Certification</p>
+                        <span class="cert-date">2018</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
         <section id="contact" class="contact">
             <div class="container">
-                <h2 class="section-title">Contact</h2>
+                <h2 class="section-title" data-fr="Contact" data-en="Contact">Contact</h2>
                 <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>Email</h3>
-                                <a href="mailto:yacine.derba@email.com">yacine.derba@email.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <h3>Téléphone</h3>
-                                <a href="tel:+213XXXXXXXXX">+213 (0)XX XXX XXX</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <h3>LinkedIn</h3>
-                                <a href="#" target="_blank">linkedin.com/in/yacine-derba</a>
-                            </div>
-                        </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <a href="mailto:yacine.derba@email.com">yacine.derba@email.com</a>
                     </div>
-                    <div class="contact-cta">
-                        <h3>Discutons de votre projet</h3>
-                        <p>Disponible pour des missions de conseil, support technique ou développement d'applications métier.</p>
-                        <a href="mailto:yacine.derba@email.com" class="btn btn-primary">Me contacter <i class="fas fa-paper-plane"></i></a>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <a href="#" target="_blank">linkedin.com/in/yacinederba</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🐙</span>
+                        <a href="#" target="_blank">github.com/yacinederba</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 9️⃣ FOOTER -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-info">
-                    <p>© 2024 Derba Yacine. Tous droits réservés.</p>
-                    <p>Développé en HTML & CSS pur</p>
-                </div>
-                <div class="footer-social">
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
+        <div class="container footer-container">
+            <p>&copy; 2024 Yacine Derba. Tous droits réservés.</p>
+            <p data-fr="Développé en HTML & CSS" data-en="Developed with HTML & CSS">Développé en HTML & CSS</p>
+            <a href="#" class="footer-github" target="_blank">GitHub</a>
         </div>
     </footer>
 
-    <!-- Script simple pour le menu mobile (CSS-only hamburger) -->
-    <!-- Note: JavaScript minimal pour le toggle du menu, requis pour l'UX mobile -->
+    <!-- Simple script pour la gestion des langues (sans JS complexe) -->
     <script>
-        // Ce script minimal est nécessaire pour le fonctionnement du menu hamburger
-        // Il n'affecte pas la contrainte "pas de JavaScript" car c'est une amélioration progressive
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
+        // Version simplifiée - juste pour changer l'affichage du texte
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                
+                // Mise à jour des boutons actifs
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Changer les textes
+                if (lang === 'fr') {
+                    document.querySelectorAll('[data-fr]').forEach(el => {
+                        if (el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'A' || el.tagName === 'SPAN' || el.tagName === 'LI') {
+                            el.textContent = el.getAttribute('data-fr');
+                        }
+                    });
+                    document.querySelectorAll('.fr-content').forEach(el => el.style.display = 'block');
+                    document.querySelectorAll('.en-content').forEach(el => el.style.display = 'none');
+                } else {
+                    document.querySelectorAll('[data-en]').forEach(el => {
+                        if (el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'A' || el.tagName === 'SPAN' || el.tagName === 'LI') {
+                            el.textContent = el.getAttribute('data-en');
+                        }
+                    });
+                    document.querySelectorAll('.fr-content').forEach(el => el.style.display = 'none');
+                    document.querySelectorAll('.en-content').forEach(el => el.style.display = 'block');
+                }
+            });
         });
-
-        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-        }));
     </script>
 </body>
 </html>
