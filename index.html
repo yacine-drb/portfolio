@@ -1,645 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yacine Derba · IT Portfolio</title>
-  <!-- Google Fonts & Font Awesome -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* === style.css === */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background: #f6f9fc;
-      color: #1e293b;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-    /* navigation */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(10, 25, 47, 0.92);
-      backdrop-filter: blur(8px);
-      padding: 0.8rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      color: #ccd6f6;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: #64ffda; }
-    .lang-toggle {
-      background: transparent;
-      border: 1px solid #64ffda;
-      color: #64ffda;
-      padding: 0.3rem 1rem;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-    .lang-toggle:hover {
-      background: rgba(100,255,218,0.1);
-    }
-    /* sections */
-    section {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: radial-gradient(circle at 70% 30%, #112240, #0a192f);
-      color: white;
-    }
-    .hero-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 3rem;
-    }
-    .profile-pic {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #64ffda;
-      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
-    }
-    .hero-text h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #e6f1ff;
-    }
-    .hero-text h3 {
-      font-size: 1.8rem;
-      color: #64ffda;
-      margin: 0.5rem 0 1rem;
-    }
-    .hero-text p {
-      max-width: 600px;
-      color: #8892b0;
-      margin-bottom: 2rem;
-    }
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-    }
-    .btn {
-      background: transparent;
-      border: 2px solid #64ffda;
-      color: #64ffda;
-      padding: 0.7rem 2rem;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.25s;
-    }
-    .btn-primary {
-      background: #64ffda;
-      color: #0a192f;
-    }
-    .btn-primary:hover {
-      background: transparent;
-      color: #64ffda;
-    }
-    .btn:hover {
-      background: rgba(100,255,218,0.1);
-    }
-    /* section headings */
-    .section-title {
-      font-size: 2.2rem;
-      color: #0a192f;
-      position: relative;
-      margin-bottom: 3rem;
-    }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 70px;
-      height: 4px;
-      background: #64ffda;
-      margin-top: 0.5rem;
-    }
-    /* resume grid */
-    .resume-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-    }
-    .timeline-item {
-      margin-bottom: 2rem;
-      padding-left: 1.5rem;
-      border-left: 3px solid #64ffda;
-    }
-    .timeline-item h4 {
-      font-weight: 700;
-      color: #0a192f;
-    }
-    .timeline-item .meta {
-      font-weight: 400;
-      color: #5a6a7a;
-      font-size: 0.9rem;
-    }
-    .badge-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 0.5rem;
-    }
-    .badge {
-      background: #112240;
-      color: #e6f1ff;
-      padding: 0.3rem 1rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-    .cert-item {
-      background: #f0f4f8;
-      padding: 0.8rem 1rem;
-      border-radius: 12px;
-      margin-bottom: 0.5rem;
-    }
-    /* skills cards */
-    .skills-category {
-      background: white;
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 10px 25px -8px rgba(0,0,0,0.05);
-      margin-bottom: 1.5rem;
-    }
-    .skills-category h4 {
-      margin-bottom: 1rem;
-      color: #0a192f;
-    }
-    .skill-badge {
-      background: #e2e8f0;
-      color: #1e293b;
-      padding: 0.4rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      display: inline-block;
-      margin: 0.3rem;
-    }
-    /* language items (dot progress) */
-    .lang-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .lang-name {
-      width: 100px;
-      font-weight: 600;
-    }
-    .lang-level {
-      display: flex;
-      gap: 8px;
-    }
-    .dot {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #cbd5e1;
-      transition: 0.2s;
-    }
-    .dot.filled {
-      background: #64ffda;
-      box-shadow: 0 0 8px #64ffda;
-    }
-    /* projects grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .project-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
-      transition: transform 0.25s ease;
-    }
-    .project-card:hover {
-      transform: translateY(-8px);
-    }
-    .project-img-gallery {
-      display: flex;
-      gap: 4px;
-      padding: 1rem 1rem 0;
-      flex-wrap: wrap;
-    }
-    .gallery-thumb {
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.2s;
-      border: 2px solid transparent;
-    }
-    .gallery-thumb:hover {
-      border-color: #64ffda;
-      transform: scale(0.98);
-    }
-    .project-info {
-      padding: 1.5rem 1rem;
-    }
-    .project-info h3 {
-      color: #0a192f;
-      margin-bottom: 0.3rem;
-    }
-    .tech-stack {
-      color: #64ffda;
-      font-size: 0.85rem;
-      margin: 0.5rem 0 0.8rem;
-    }
-    /* modal gallery */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-    }
-    .modal.active {
-      display: flex;
-    }
-    .modal-content {
-      max-width: 80vw;
-      max-height: 80vh;
-      position: relative;
-    }
-    .modal-image {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 20px 40px black;
-    }
-    .modal-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.6);
-      color: white;
-      border: none;
-      font-size: 2rem;
-      padding: 1rem 1.2rem;
-      cursor: pointer;
-      border-radius: 40px;
-      transition: 0.2s;
-    }
-    .modal-btn:hover { background: #64ffda; color: black; }
-    .prev { left: 20px; }
-    .next { right: 20px; }
-    .close-modal {
-      position: absolute;
-      top: 20px; right: 30px;
-      font-size: 3rem;
-      color: white;
-      cursor: pointer;
-    }
-    /* contact */
-    .contact-form {
-      max-width: 600px;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      background: white;
-      padding: 2.5rem;
-      border-radius: 24px;
-      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.05);
-    }
-    .contact-form input, .contact-form textarea {
-      padding: 1rem;
-      border: 1px solid #d1d9e6;
-      border-radius: 12px;
-      font-size: 1rem;
-    }
-    .contact-form button {
-      align-self: flex-start;
-    }
-    .social-links a {
-      color: #0a192f;
-      font-size: 2rem;
-      margin-right: 1.5rem;
-    }
-    /* footer */
-    footer {
-      background: #0a192f;
-      color: #8892b0;
-      text-align: center;
-      padding: 2rem;
-    }
-    /* responsive */
-    @media (max-width: 768px) {
-      .navbar { padding: 0.8rem 1rem; }
-      .nav-links { gap: 1rem; }
-      .hero-content { justify-content: center; text-align: center; }
-      .resume-grid { grid-template-columns: 1fr; }
-      .profile-pic { width: 160px; height: 160px; }
-    }
-    /* utility */
-    .hidden-fr, .hidden-en {
-      display: none;
-    }
-    [data-lang="fr"] .lang-fr,
-    [data-lang="en"] .lang-en {
-      display: block;
-    }
-    [data-lang="fr"] .lang-fr-inline,
-    [data-lang="en"] .lang-en-inline {
-      display: inline;
-    }
-    .lang-en, .lang-fr, .lang-en-inline, .lang-fr-inline {
-      display: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derba Yacine | IT Portfolio</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body data-lang="en">
-  <!-- FIXED NAVBAR -->
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#languages">Languages</a></li>
-      <li><a href="#contact">Contact</a></li>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="logo">Derba Yacine</div>
+  <nav>
+    <ul>
+      <li><a href="#home" data-en="Home" data-fr="Accueil">Home</a></li>
+      <li><a href="#about" data-en="About" data-fr="À propos">About</a></li>
+      <li><a href="#resume" data-en="Resume" data-fr="CV">Resume</a></li>
+      <li><a href="#projects" data-en="Projects" data-fr="Projets">Projects</a></li>
+      <li><a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a></li>
+      <li><a href="#languages" data-en="Languages" data-fr="Langues">Languages</a></li>
+      <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
     </ul>
-    <button class="lang-toggle" id="langToggle">FR</button>
   </nav>
+  <button id="langToggle">FR</button>
+</header>
 
-  <!-- HOME SECTION -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <img src="https://placehold.co/400x400/0a192f/64ffda?text=Y.D" alt="Profile" class="profile-pic">
-      <div class="hero-text">
-        <h1 class="lang-en">Derba Yacine</h1>
-        <h1 class="lang-fr">Derba Yacine</h1>
-        <h3 class="lang-en">IT Operations & Infrastructure Specialist</h3>
-        <h3 class="lang-fr">Spécialiste IT Ops & Infrastructure</h3>
-        <p class="lang-en">IT professional with 4+ years of experience in technical support and IT operations within a fast-paced business environment. Skilled in systems maintenance, infrastructure support, and business application development, with a strong understanding of both technical and operational needs.</p>
-        <p class="lang-fr">Professionnel de l'informatique avec plus de 4 ans d'expérience en support technique et opérations IT. Compétent en maintenance de systèmes, support infrastructure et développement d'applications métier.</p>
-        <div class="cta-buttons">
-          <a href="#resume" class="btn btn-primary lang-en">View Resume</a>
-          <a href="#resume" class="btn btn-primary lang-fr">Voir CV</a>
-          <a href="#contact" class="btn lang-en">Contact Me</a>
-          <a href="#contact" class="btn lang-fr">Contact</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT / RESUME (merged) -->
-  <section id="about"></section> <!-- nav smooth -->
-  <section id="resume">
-    <h2 class="section-title lang-en">Resume</h2>
-    <h2 class="section-title lang-fr">CV</h2>
-    <div class="resume-grid">
-      <div>
-        <h3 class="lang-en">Profile</h3><h3 class="lang-fr">Profil</h3>
-        <p class="lang-en">IT professional with 4+ years of experience in technical support and IT operations within a fast-paced business environment. Skilled in systems maintenance, infrastructure support, and business application development, with a strong understanding of both technical and operational needs.</p>
-        <p class="lang-fr">Professionnel IT avec +4 ans d'expérience en support technique et opérations. Compétences en maintenance de systèmes, support infrastructure et développement d'applications.</p>
-        <div class="cert-item"><strong class="lang-en">Education</strong><strong class="lang-fr">Formation</strong><br>Higher Technician in Database Management, Institut National Spécialisé El Hamri Oran (BTS) 10/2021 – 03/2024</div>
-        <div><strong class="lang-en">Certificates</strong><strong class="lang-fr">Certificats</strong>
-          <div class="badge-list">
-            <span class="badge">Higher Technician DB</span>
-            <span class="badge">B2B Marketing Attestation</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3 class="lang-en">Professional Experience</h3><h3 class="lang-fr">Expérience</h3>
-        <div class="timeline-item">
-          <h4>SARL RAYANOX · IT APPRENTICE</h4>
-          <div class="meta">10/2021 – 07/2023</div>
-        </div>
-        <div class="timeline-item">
-          <h4>SARL RAYANOX · IT Help desk</h4>
-          <div class="meta">07/2023 – Present | Oran, Algeria</div>
-          <ul style="margin-left:1.2rem; color:#334155;">
-            <li>• Provide technical support to 100+ employees across hardware, software, and network environments</li>
-            <li>• Manage and resolve 25–40 weekly support tickets using GLPI</li>
-            <li>• Administer Windows workstations, system updates, access permissions, endpoint security</li>
-            <li>• Support and troubleshoot ERP Odoo system</li>
-            <li>• Architected and managed TrueNAS storage solutions, 99.9% availability, Veeam recovery</li>
-            <li>• Diagnose network connectivity (switches, routers)</li>
-            <li>• Assist in IT equipment deployment and upgrades</li>
-          </ul>
-        </div>
-        <a href="#" class="btn btn-primary" style="margin-top:1rem; display:inline-block;"><i class="fas fa-download"></i> <span class="lang-en">Download CV (PDF)</span><span class="lang-fr">Télécharger CV</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS with gallery & modal -->
-  <section id="projects">
-    <h2 class="section-title lang-en">Projects</h2>
-    <h2 class="section-title lang-fr">Projets</h2>
-    <div class="projects-grid" id="projectGrid"></div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2 class="section-title lang-en">Skills</h2><h2 class="section-title lang-fr">Compétences</h2>
-    <div class="skills-category"><h4>Operating Systems</h4> <span class="skill-badge">Windows 10/11</span> <span class="skill-badge">macOS</span></div>
-    <div class="skills-category"><h4>Systems & Tools</h4> <span class="skill-badge">GLPI</span> <span class="skill-badge">Odoo ERP</span> <span class="skill-badge">TrueNAS</span> <span class="skill-badge">Veeam Backup</span></div>
-    <div class="skills-category"><h4>Networking</h4> <span class="skill-badge">TCP/IP</span> <span class="skill-badge">Network Troubleshooting</span> <span class="skill-badge">Switch & Router Support</span></div>
-    <div class="skills-category"><h4>Databases</h4> <span class="skill-badge">MySQL</span> <span class="skill-badge">PostgreSQL</span> <span class="skill-badge">SQLite</span> <span class="skill-badge">Firebase</span></div>
-    <div class="skills-category"><h4>Development</h4> <span class="skill-badge">Flutter</span> <span class="skill-badge">Dart</span> <span class="skill-badge">Mobile Application Development</span></div>
-    <div class="skills-category"><h4>Hardware</h4> <span class="skill-badge">Desktop & Laptop Maintenance</span> <span class="skill-badge">Printer Support</span></div>
-  </section>
-
-  <!-- LANGUAGES visual dots -->
-  <section id="languages">
-    <h2 class="section-title lang-en">Languages</h2><h2 class="section-title lang-fr">Langues</h2>
-    <div class="lang-item"><span class="lang-name">ARABIC</span> <div class="lang-level" level="5"></div></div>
-    <div class="lang-item"><span class="lang-name">ENGLISH</span> <div class="lang-level" level="4"></div></div>
-    <div class="lang-item"><span class="lang-name">FRENCH</span> <div class="lang-level" level="3"></div></div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2 class="section-title lang-en">Contact</h2><h2 class="section-title lang-fr">Contact</h2>
-    <div style="display: grid; gap: 3rem; grid-template-columns: 1fr 1fr;">
-      <form class="contact-form">
-        <input type="text" placeholder="Name" class="lang-en" value=""><input type="text" placeholder="Nom" class="lang-fr">
-        <input type="email" placeholder="Email">
-        <textarea rows="5" placeholder="Message"></textarea>
-        <button type="submit" class="btn btn-primary lang-en">Send</button><button type="submit" class="btn btn-primary lang-fr">Envoyer</button>
-      </form>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:yassinederba00@gmail.com"><i class="fas fa-envelope"></i></a>
-        <p style="margin-top:1rem;">yassinederba00@gmail.com / 0658976066</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Derba Yacine. All rights reserved. | <a href="#" style="color:#64ffda;">GitHub</a></p>
-  </footer>
-
-  <!-- MODAL (hidden by default) -->
-  <div id="imageModal" class="modal">
-    <span class="close-modal">&times;</span>
-    <button class="modal-btn prev" id="modalPrev">‹</button>
-    <div class="modal-content">
-      <img src="" alt="" class="modal-image" id="modalImage">
-    </div>
-    <button class="modal-btn next" id="modalNext">›</button>
+<!-- ================= HOME ================= -->
+<section id="home" class="hero">
+  <img src="assets/images/profile.jpg" class="profile-img" alt="Profile">
+  <h1>Derba Yacine</h1>
+  <h2>IT Operations & Infrastructure Specialist</h2>
+  <p>
+    IT professional with 4+ years of experience in technical support and IT operations within a fast-paced business environment. Skilled in systems maintenance, infrastructure support, and business application development, with a strong understanding of both technical and operational needs.
+  </p>
+  <div class="hero-buttons">
+    <a href="#resume" class="btn">View Resume</a>
+    <a href="#contact" class="btn secondary">Contact Me</a>
   </div>
+</section>
 
-  <!-- script.js -->
-  <script>
-    (function() {
-      // 1) language toggle
-      const root = document.body;
-      const toggle = document.getElementById('langToggle');
-      let currentLang = 'en';
-      toggle.addEventListener('click', ()=>{
-        currentLang = currentLang === 'en' ? 'fr' : 'en';
-        root.setAttribute('data-lang', currentLang);
-        toggle.textContent = currentLang === 'en' ? 'FR' : 'EN';
-      });
-      root.setAttribute('data-lang', 'en');
+<!-- ================= RESUME ================= -->
+<section id="resume" class="section">
 
-      // 2) language levels dots (exact from resume: ARABIC 5, ENGLISH 4, FRENCH 3)
-      const levels = [
-        { level:5, container:document.querySelector('.lang-item:nth-child(1) .lang-level') },
-        { level:4, container:document.querySelector('.lang-item:nth-child(2) .lang-level') },
-        { level:3, container:document.querySelector('.lang-item:nth-child(3) .lang-level') }
-      ];
-      levels.forEach(l => {
-        if (!l.container) return;
-        l.container.innerHTML = '';
-        for (let i=0; i<5; i++) {
-          const dot = document.createElement('span');
-          dot.className = 'dot' + (i < l.level ? ' filled' : '');
-          l.container.appendChild(dot);
-        }
-      });
+<h3>Professional Experience</h3>
 
-      // 3) PROJECTS data (exactly as resume)
-      const projects = [
-        { titleEn:'Rayanox E-Commerce & Order Tracking App', titleFr:'App E-Commerce Rayanox',
-          descEn:'Engineered a full-cycle cross-platform e-commerce solution (Flutter + PHP/MySQL), consolidating manual order entry from 5+ channels into a single digital platform.',
-          descFr:'Développement full-cycle d\'une solution e-commerce cross-platform (Flutter + PHP/MySQL) regroupant les commandes de 5+ canaux.',
-          tech:'Flutter, PHP, MySQL',
-          images:['https://placehold.co/300x200/112240/64ffda?text=App1','https://placehold.co/300x200/1e293b/64ffda?text=Tracking','https://placehold.co/300x200/0a192f/64ffda?text=Dashboard','https://placehold.co/300x200/334155/64ffda?text=Orders'] },
-        { titleEn:'GestiFlotte: Fleet & Logistics Management', titleFr:'GestiFlotte: gestion de flotte',
-          descEn:'Architected a fleet management application serving 70+ vehicles, integrating real-time mission tracking, fuel consumption analytics, and mileage monitoring.',
-          descFr:'Application de gestion de flotte pour 70+ véhicules, suivi de mission en temps réel, analytique carburant.',
-          tech:'Flutter, Dart, Firebase',
-          images:['https://placehold.co/300x200/0a192f/64ffda?text=Fleet1','https://placehold.co/300x200/112240/64ffda?text=Fuel','https://placehold.co/300x200/1e293b/64ffda?text=Map'] },
-        { titleEn:'Trade Fair Lead Capture Application', titleFr:'Application de capture leads',
-          descEn:'Developed a cross-platform lead retrieval app replacing paper forms, enabling real-time sync of prospect data to CRM.',
-          descFr:'Application de capture de leads cross-platform remplaçant les formulaires papier, synchronisation CRM en temps réel.',
-          tech:'Flutter, Dart, REST',
-          images:['https://placehold.co/300x200/334155/64ffda?text=Lead1','https://placehold.co/300x200/0a192f/64ffda?text=Form','https://placehold.co/300x200/112240/64ffda?text=Sync'] }
-      ];
-      const container = document.getElementById('projectGrid');
-      function renderProjects() {
-        container.innerHTML = projects.map((p, idx) => {
-          const imagesHTML = p.images.map((img, i) => `<img src="${img}" class="gallery-thumb" data-project="${idx}" data-index="${i}" alt="thumb">`).join('');
-          return `<div class="project-card">
-            <div class="project-img-gallery">${imagesHTML}</div>
-            <div class="project-info">
-              <h3 class="lang-en">${p.titleEn}</h3><h3 class="lang-fr">${p.titleFr}</h3>
-              <p class="lang-en">${p.descEn}</p><p class="lang-fr">${p.descFr}</p>
-              <div class="tech-stack">${p.tech}</div>
-            </div>
-          </div>`;
-        }).join('');
-      }
-      renderProjects();
+<div class="timeline">
 
-      // 4) modal gallery
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImage');
-      const closeModal = document.querySelector('.close-modal');
-      const prevBtn = document.getElementById('modalPrev');
-      const nextBtn = document.getElementById('modalNext');
-      let currentImages = [];
-      let currentIndex = 0;
+<div class="timeline-item">
+<h4>SARL RAYANOX</h4>
+<p>IT APPRENTICE</p>
+<p>10/2021 – 07/2023</p>
+</div>
 
-      function openModal(imgArray, idx) {
-        currentImages = imgArray;
-        currentIndex = idx;
-        modalImg.src = currentImages[currentIndex];
-        modal.classList.add('active');
-      }
-      document.querySelectorAll('.gallery-thumb').forEach(thumb => {
-        thumb.addEventListener('click', (e) => {
-          const projIdx = e.target.dataset.project;
-          const imgIdx = parseInt(e.target.dataset.index);
-          const imgList = projects[projIdx].images;
-          openModal(imgList, imgIdx);
-        });
-      });
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-        modalImg.src = currentImages[currentIndex];
-      });
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % currentImages.length;
-        modalImg.src = currentImages[currentIndex];
-      });
-      closeModal.addEventListener('click', ()=> modal.classList.remove('active'));
-      modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
+<div class="timeline-item">
+<h4>SARL RAYANOX</h4>
+<p>IT Help desk</p>
+<p>07/2023 – Present | Oran, Algeria</p>
+<ul>
+<li>Provide technical support to 100+ employees across hardware, software, and network environments, ensuring minimal disruption to operations.</li>
+<li>Manage and resolve 25–40 weekly support tickets using GLPI, maintaining strong response times and user satisfaction.</li>
+<li>Administer and maintain Windows workstations, including system updates, user configuration, access permissions, and endpoint security.</li>
+<li>Support and troubleshoot ERP Odoo system across multiple departments, resolving both technical and functional issues.</li>
+<li>Architected and managed TrueNAS storage solutions, ensuring 99.9% data availability and robust disaster recovery via Veeam protocols</li>
+<li>Diagnose and resolve network connectivity issues involving switches, routers, and internal infrastructure components.</li>
+<li>Assist in IT equipment deployment, upgrades, and preventive maintenance initiatives.</li>
+</ul>
+</div>
 
-      // (mobile swipe optional - basic)
-      let touchstartX = 0;
-      modal.addEventListener('touchstart', e => touchstartX = e.changedTouches[0].screenX);
-      modal.addEventListener('touchend', e => {
-        if (!modal.classList.contains('active')) return;
-        const diff = e.changedTouches[0].screenX - touchstartX;
-        if (diff > 50) { prevBtn.click(); }
-        else if (diff < -50) { nextBtn.click(); }
-      });
-    })();
-  </script>
-  <!-- ensure language visibility by toggling class -->
-  <style>
-    [data-lang="en"] .lang-fr, [data-lang="en"] .lang-fr-inline { display: none; }
-    [data-lang="en"] .lang-en, [data-lang="en"] .lang-en-inline { display: block; }
-    [data-lang="en"] .lang-en-inline { display: inline; }
-    [data-lang="fr"] .lang-en, [data-lang="fr"] .lang-en-inline { display: none; }
-    [data-lang="fr"] .lang-fr, [data-lang="fr"] .lang-fr-inline { display: block; }
-    [data-lang="fr"] .lang-fr-inline { display: inline; }
-    .lang-en, .lang-fr { display: none; } /* fallback */
-  </style>
+</div>
+
+<h3>Education</h3>
+<p><strong>Higher Technician in Database Management</strong><br>
+Institut National Spécialisé de la Formation Professionnelle El Hamri Oran
+Brevet de technicien supérieur (BTS)<br>
+10/2021 – 03/2024 | El Hamri ,Oran
+</p>
+
+<h3>Certificates</h3>
+<ul>
+<li>Diploma Higher Technician in Database Management</li>
+<li>B2B Marketing Attestation – École de Gestion Informatique et de Commerce</li>
+</ul>
+
+<a href="#" class="btn download">Download CV</a>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section">
+<h3>Projects</h3>
+
+<div class="project-grid">
+
+<div class="project-card" onclick="openGallery(0)">
+<h4>Rayanox E-Commerce & Order Tracking App</h4>
+<p>Engineered a full-cycle cross-platform e-commerce solution (Flutter + PHP/MySQL), consolidating manual order entry from 5+ channels into a single digital platform</p>
+</div>
+
+<div class="project-card" onclick="openGallery(1)">
+<h4>GestiFlotte: Fleet & Logistics Management System</h4>
+<p>Architected a fleet management application serving 70+ vehicles, integrating real-time mission tracking, fuel consumption analytics, and mileage monitoring</p>
+</div>
+
+<div class="project-card" onclick="openGallery(2)">
+<h4>Trade Fair Lead Capture Application</h4>
+<p>Developed a cross-platform lead retrieval app replacing paper forms, enabling real-time sync of prospect data to CRM</p>
+</div>
+
+</div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section">
+<h3>Skills</h3>
+
+<div class="skills-grid">
+
+<div>
+<h4>Operating Systems</h4>
+<p>Windows 10/11<br>macOS</p>
+</div>
+
+<div>
+<h4>Systems & Tools</h4>
+<p>GLPI<br>Odoo ERP<br>TrueNAS<br>Veeam Backup</p>
+</div>
+
+<div>
+<h4>Networking</h4>
+<p>TCP/IP<br>Network Troubleshooting<br>Switch & Router Support</p>
+</div>
+
+<div>
+<h4>Databases</h4>
+<p>MySQL<br>PostgreSQL<br>SQLite<br>Firebase</p>
+</div>
+
+<div>
+<h4>Development</h4>
+<p>Flutter<br>Dart<br>Mobile Application Development</p>
+</div>
+
+<div>
+<h4>Hardware</h4>
+<p>Desktop & Laptop Maintenance<br>Printer Support</p>
+</div>
+
+</div>
+</section>
+
+<!-- ================= LANGUAGES ================= -->
+<section id="languages" class="section">
+<h3>Languages</h3>
+
+<div class="language">
+<span>ARABIC</span>
+<div class="dots level-5"></div>
+</div>
+
+<div class="language">
+<span>ENGLISH</span>
+<div class="dots level-4"></div>
+</div>
+
+<div class="language">
+<span>FRENCH</span>
+<div class="dots level-3"></div>
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section">
+<h3>Contact</h3>
+
+<form>
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Message" required></textarea>
+<button type="submit" class="btn">Send</button>
+</form>
+
+<div class="contact-info">
+<p>Email: yassinederba00@gmail.com</p>
+<p>Phone: 0658976066</p>
+<p>LinkedIn: Yacine Derba</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 Derba Yacine | GitHub Portfolio
+</footer>
+
+<!-- IMAGE MODAL -->
+<div id="galleryModal" class="modal">
+<span class="close" onclick="closeGallery()">&times;</span>
+<img id="modalImage">
+<button class="prev" onclick="changeImage(-1)">&#10094;</button>
+<button class="next" onclick="changeImage(1)">&#10095;</button>
+</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
